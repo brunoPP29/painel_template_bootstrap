@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+}
+
+button{
+    margin-right: 20px;
+    border-radius: 20px !important;
+    margin-top: 20px;
+}
+ul{
+    border-radius: 0 0 20px 20px !important;
+}
+
+.navbrand-name{
+    font-size: 30px !important;
+    font-weight: bold;
+}
+
+.bg-body-tertiary{
+    padding: 20px  !important;
+}
