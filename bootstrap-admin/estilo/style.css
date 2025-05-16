@@ -22,3 +22,10 @@ ul{
 .bg-body-tertiary{
     padding: 20px  !important;
 }
+
+aside{
+    position: fixed ;
+    top: 0;
+    width: 400px;
+    height: 100%;
+}

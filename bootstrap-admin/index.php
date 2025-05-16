@@ -50,7 +50,7 @@
 
 
 
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasScrollingLabel">PAINEL DO SITE</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -85,28 +85,36 @@
 </div>
 </div>
   </div>
-</div><!--  -->
+</div><!-- offcanvas -->
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <h2>Menu Lateral</h2>
-        <ul class="list-group">
-          <li class="list-group
+<aside class="bg-light p-4 border rounded shadow-sm">
+  <h6 class="text-muted">Resumo do Sistema</h6>
+  <div class="mb-3">
+    <strong>Usuários ativos:</strong> 124
+  </div>
+  <div class="mb-3">
+    <strong>Usuários totais:</strong> 200
+  </div>
+  <div class="mb-3">
+    <strong>Usuários no painel:</strong> 2
+  </div>
+  <div class="mb-3">
+    <strong>Usuários logados:</strong> 20
+  </div>
+  <button class="btn btn-outline-danger w-100">🚪 Logout</button>
+</aside>
+
 
 <div style="margin: 20px 0;" class="main-content">
     <div class="container">
       <div class="card p-4">
-        <!--  NOME DO QUE-->
         <h4 class="mb-4">Cadastro de Item</h4>
         <form>
           <div class="mb-3">
-                    <!--  INPUT-->
             <label for="nome" class="form-label">Nome</label>
             <input type="text" class="form-control" id="nome" placeholder="Digite o nome">
           </div>
           <div class="mb-3">
-                      <!--  INPUT-->
             <label for="categoria" class="form-label">Categoria</label>
             <select class="form-select" id="categoria">
               <option selected>Selecione uma categoria</option>
@@ -115,18 +123,14 @@
             </select>
           </div>
           <div class="mb-3">
-                      <!--  INPUT-->
             <label for="descricao" class="form-label">Descrição</label>
             <textarea class="form-control" id="descricao" rows="3" placeholder="Descrição do item"></textarea>
           </div>
           <div class="mb-3">
-                      <!--  INPUT-->
             <label for="preco" class="form-label">Preço</label>
             <input type="text" class="form-control" id="preco" placeholder="R$ 0,00">
           </div>
-
-                                <!--  INPUT-->
-          <input type="submit" class="btn btn-primary">Enviar</input>
+          <button type="submit" class="btn btn-primary">Salvar</button>
         </form>
       </div>
     </div>
