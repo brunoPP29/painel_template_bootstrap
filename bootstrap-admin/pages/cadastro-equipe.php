@@ -9,29 +9,46 @@
       <h4 class="mb-0">Cadastro de Equipe</h4>
     </div>
     <div class="card-body">
-      <form>
-        <div class="mb-3">
+      <form method="post" enctype="multipart/form-data">
+      
+      <?php
+      if (isset($_POST['acao'])) {
+        $nome = $_POST['nome'];
+        $cargo = $_POST['cargo'];
+        $email = $_POST['email'];
+        $imagem = $_FILES['img'];
+        $imagem = Painel::uploadFile($imagem);
+        $sql = MySql::conectar()->prepare("INSERT INTO `tb_admin.equipe` VALUES (null,?,?,?,?)");
+      }
+      
+      ?>
+
+
+      
+      
+      
+      <div class="mb-3">
           <label for="teamName" class="form-label">Nome Funcionário</label>
-          <input type="text" class="form-control" id="teamName" placeholder="Digite o nome do funcionário" required>
+          <input name="nome" type="text" class="form-control" id="teamName" placeholder="Digite o nome do funcionário" required>
         </div>
 
         <div class="mb-3">
           <label for="members" class="form-label">Cargo</label>
-          <textarea class="form-control" id="members" rows="3" placeholder="Ex: Desenvolvedor Júnior, Sênior..." required></textarea>
+          <input name="cargo" type="text" class="form-control" id="teamName" placeholder="Digite o nome do funcionário" required>
         </div>
 
         <div class="mb-3">
           <label for="email" class="form-label">E-mail de Contato</label>
-          <input type="email" class="form-control" id="email" placeholder="equipe@email.com" required>
+          <input name="email" type="email" class="form-control" id="email" placeholder="equipe@email.com" required>
         </div>
 
         <div class="mb-3">
           <label for="image" class="form-label">Imagem do Funcionário</label>
-          <input type="file" class="form-control" id="imagem-func" required>
+          <input name="img" type="file" class="form-control" id="imagem-func" required>
         </div>
 
 
-        <button type="submit" class="btn btn-success w-100">Cadastrar Equipe</button>
+        <button name="acao" type="submit" class="btn btn-success w-100">Cadastrar Equipe</button>
       </form>
     </div>
   </div>

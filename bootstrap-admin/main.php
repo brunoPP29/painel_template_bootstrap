@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Painel de controle</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link href="./estilo/style.css" rel="stylesheet" type="text/css"> 
@@ -25,9 +25,9 @@
     Equipe
   </button>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="<?php echo INCLUDE_PATH; ?>cadastrar-equipe.php">Cadastrar Equipe</a></li>
-    <li><a class="dropdown-item" href="/exemplo.php">Exemplo</a></li>
-    <li><a class="dropdown-item" href="/exemplo.php">Teste</a></li>
+    <li><a class="dropdown-item" href="<?php echo INCLUDE_PATH; ?>cadastro-equipe">Cadastrar Equipe</a></li>
+    <li><a class="dropdown-item" href="<?php echo INCLUDE_PATH; ?>editar-equipe">Editar Equipe</a></li>
+    <li><a class="dropdown-item" href="<?php echo INCLUDE_PATH; ?>listar-equipe">Listar Equipe</a></li>
   </ul>
 </div>
 <div class="dropdown">
