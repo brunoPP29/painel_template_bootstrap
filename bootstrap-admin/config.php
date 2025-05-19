@@ -14,7 +14,7 @@
         define('USER', 'root');
         define('PASSWORD', '');
         define('DATABASE', 'painel');
-        define('BASE_DIR_PAINEL',__DIR__.'/boostrap-admin/');
+        define('BASE_DIR_PAINEL',__DIR__.'/boostrap-admin');
 
 
 
