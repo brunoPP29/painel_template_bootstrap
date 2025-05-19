@@ -17,8 +17,14 @@
         $cargo = $_POST['cargo'];
         $email = $_POST['email'];
         $imagem = $_FILES['img'];
-        $imagem = Painel::uploadFile($imagem);
+        $imagem = Painel::uploadFileEquipe($imagem);
         $sql = MySql::conectar()->prepare("INSERT INTO `tb_admin.equipe` VALUES (null,?,?,?,?)");
+        $sql->execute(array($nome, $cargo, $email, $imagem));
+        if ($sql->rowCount() == 1) {
+          Painel::alertSucesso('Sucesso ao cadastrar funcionário!');
+        } else {
+          Painel::alertErro('Erro ao cadastrar funcionário!');
+        }
       }
       
       ?>
