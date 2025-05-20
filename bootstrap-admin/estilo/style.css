@@ -24,10 +24,48 @@ ul{
 }
 
 aside{
-    position: fixed ;
+    position: absolute;
     top: 0;
     width: 300px;
     height: 100%;
 }
 
-  
+@media (max-width: 1919px) {
+    aside{
+        display: none;
+    }
+}
+
+
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbrand-name {
+        font-size: 24px !important;
+    }
+
+    button {
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
+    .bg-body-tertiary {
+        padding: 10px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbrand-name {
+        font-size: 20px !important;
+    }
+
+    button {
+        margin-right: 5px;
+        margin-top: 5px;
+    }
+
+    .bg-body-tertiary {
+        padding: 5px !important;
+    }
+}

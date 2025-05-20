@@ -6,29 +6,24 @@
     <div class="card-body">
       <form method="post" enctype="multipart/form-data">
 
+      <div class="mb-3">
+          <label for="cargo" class="form-label">Cargo</label>
+          <select class="form-select" id="quem" name="quem" required>
       <?php
 
 
-      $idRecebido = $_GET['id'];
-      $sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.equipe` WHERE id = ?");
-      $sql->execute(array($idRecebido));
-      $funcionario = $sql->fetchAll();
+        $sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.equipe`");
+        $sql->execute();
+        $funcionario = $sql->fetchAll();
 
       foreach ($funcionario as $key => $value) {
         # code...
-      if (!$funcionario) {
-        echo '<div class="alert alert-danger">Funcionário não encontrado!</div>';
-        exit;
-      }else {
-        echo '<div class="mb-3">
-            <label for="cargo" class="form-label">Quem você quer editar?</label>
-            <select class="form-select" id="quem" name="quem" required>
-            <option value="'.$idRecebido.'">'.$value['nome'].'</option>
-            </select>
-        </div>';
-      }
-    }
-
+           echo '<option value="'.$value['id'].'">'.$value['nome'].'</option>';
+        }
+        ?>
+        </select>
+        </div>
+<?php
 
     if (isset($_POST['acao'])) {
       $nome = $_POST['nome'] ?? $funcionario[0]['nome'];

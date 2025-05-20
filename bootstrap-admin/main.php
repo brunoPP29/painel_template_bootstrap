@@ -26,7 +26,7 @@
   </button>
   <ul class="dropdown-menu">
     <li><a class="dropdown-item" href="<?php echo INCLUDE_PATH; ?>cadastro-equipe">Cadastrar Equipe</a></li>
-    <li><a class="dropdown-item" href="<?php echo INCLUDE_PATH; ?>editar-equipe">Editar Equipe</a></li>
+    <li><a class="dropdown-item" href="<?php echo INCLUDE_PATH; ?>editar-equipeAny">Editar Equipe</a></li>
     <li><a class="dropdown-item" href="<?php echo INCLUDE_PATH; ?>listar-equipe">Listar Equipe</a></li>
   </ul>
 </div>
@@ -86,24 +86,6 @@
 </div>
   </div>
 </div><!-- offcanvas -->
-
-<aside class="bg-light p-4 border rounded shadow-sm">
-  <h6 class="text-muted">Resumo do Sistema</h6>
-  <div class="mb-3">
-    <strong>Usuários ativos:</strong> 124
-  </div>
-  <div class="mb-3">
-    <strong>Usuários totais:</strong> 200
-  </div>
-  <div class="mb-3">
-    <strong>Usuários no painel:</strong> 2
-  </div>
-  <div class="mb-3">
-    <strong>Usuários logados:</strong> 20
-  </div>
-  <button class="btn btn-outline-danger w-100">🚪 Logout</button>
-</aside>
-
 <?php
 
 Painel::carregarPagina();

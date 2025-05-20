@@ -23,7 +23,7 @@
         <div>
           <form method="post">
             <input type="hidden" name="idDeletar" value="<?php echo $id; ?>">
-            <button class="btn btn-sm btn-warning me-2">Editar</button>
+            <input name="editar" type="submit" value="Editar" class="btn btn-sm btn-warning me-2"></input>
             <input type="submit" value="Deletar" name="acaoDeletar" class="btn btn-sm btn-danger"></input>
           </form>
         </div>
@@ -32,7 +32,16 @@
       <?php
     }
 
+
+    if (isset($_POST['editar'])) {
+      $idEditar = $_POST['idDeletar'];
+      echo '<script>window.location.href="'.INCLUDE_PATH_PAINEL.'editar-equipe?id='.$idEditar.'";</script>';
+    }
+
     if (isset($_POST['acaoDeletar']) && isset($_POST['idDeletar'])) {
+      echo '<script>if(!confirm("Tem certeza que deseja deletar este funcionário?")){window.location.href="'.INCLUDE_PATH_PAINEL.'listar-equipe";}</script>';
+
+
       $idDeletar = $_POST['idDeletar'];
       $sql = MySql::conectar()->prepare("DELETE FROM `tb_admin.equipe` WHERE id = ?");
       $sql->execute(array($idDeletar));
