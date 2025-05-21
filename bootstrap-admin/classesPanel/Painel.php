@@ -7,17 +7,25 @@ class Painel{
                 if (file_exists('pages/'.$url[0].'.php')) {
                     include('pages/'.$url[0].'.php');
                 }else {
-                    include('pages/dashboard.php');
+                    
                 }
+            }else {
+                include('pages/dashboard.php');
             }
         }
-    public static function logado(){
-        if ($_SESSION['login'] == true) {
-            return true;
-        }else {
-            return false;
+        public static function logado(){
+            if (isset($_SESSION['login'])) {
+                return true;
+            } else {
+                return false;
+            }
         }
-    }
+        public static function loggout(){
+            session_destroy();
+            setcookie('lembrar','true',time()-1,'/');
+            header('Location: '.INCLUDE_PATH);
+            exit;
+        }
     public static function uploadFileEquipe($file){
         $formatoArquivo = explode('.',$file['name']);
         $imagemNome = uniqid().'.'.$formatoArquivo[count($formatoArquivo) - 1];

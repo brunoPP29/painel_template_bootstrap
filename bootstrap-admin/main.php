@@ -14,7 +14,8 @@
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Painel BOOTSTRAP</a>
+    <a class="navbar-brand" href="
+    <?php  echo INCLUDE_PATH; ?>">Painel BOOTSTRAP</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -41,7 +42,27 @@
   </ul>
 </div>
       </ul>
-      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Menu OUTSCREEN</button>
+
+
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Como Funciona?</button>
+      <div class="loggout">
+        <form method="post">
+
+      <?php
+      if (isset($_POST['loggout'])) {
+        Painel::loggout();
+      }
+      
+      
+      ?>
+
+
+          <button type="submit" name="loggout" value="true" class="btn btn-danger">
+        <img width="25px" height="auto" src="https://img.icons8.com/?size=100&id=8119&format=png&color=FFFFFF" alt="Logout">
+          </button>
+        </form>
+      </div>
+
     </div>
   </div>
   </div>
@@ -88,7 +109,9 @@
 </div><!-- offcanvas -->
 <?php
 
+
 Painel::carregarPagina();
+
 
 ?>
 
