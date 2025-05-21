@@ -29,6 +29,7 @@
       $nome = $_POST['nome'] ?? $funcionario[0]['nome'];
       $cargo = $_POST['cargo'] ?? $funcionario[0]['cargo'];
       $email = $_POST['email'] ?? $funcionario[0]['email'];
+      $idRecebido = $_POST['quem'] ?? $funcionario[0]['id'];
 
       if (!empty($_FILES['imagem']['name'])) {
         $imagem = $_FILES['imagem'];
@@ -63,27 +64,22 @@
 
         <div class="mb-3">
           <label for="nome" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="nome" name="nome" value="<?php echo $value['nome']; ?>" required>
+          <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome do funcionário" required>
         </div>
 
         <div class="mb-3">
           <label for="cargo" class="form-label">Cargo</label>
-          <input type="text" class="form-control" id="cargo" name="cargo" value="<?php echo $value['cargo']; ?>" required>
+          <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Digite o cargo do funcionário" required>
         </div>
 
         <div class="mb-3">
           <label for="email" class="form-label">E-mail</label>
-          <input type="email" class="form-control" id="email" name="email" value="<?php echo $value['email']; ?>" required>
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Imagem Atual</label><br>
-          <img src="uploadsEqui/<?php echo $value['img']; ?>" alt="Imagem atual" class="img-thumbnail" style="max-width: 100px;">
+          <input type="email" class="form-control" id="email" name="email" placeholder="Digite o e-mail do funcionário" required>
         </div>
 
         <div class="mb-3">
           <label for="imagem" class="form-label">Nova Imagem (opcional)</label>
-          <input type="file" class="form-control" id="imagem" name="imagem">
+          <input type="file" class="form-control" id="imagem" name="imagem" placeholder="Selecione uma imagem">
         </div>
 
         <button name="acao" type="submit" class="btn btn-primary w-100">Atualizar Funcionário</button>
