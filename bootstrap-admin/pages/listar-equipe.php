@@ -43,6 +43,15 @@
 
 
       $idDeletar = $_POST['idDeletar'];
+
+      $sqlImg = MySql::conectar()->prepare("SELECT img FROM `tb_admin.equipe` WHERE id = ?");
+      $sqlImg->execute(array($idDeletar));
+      $img = $sqlImg->fetch()['img'];
+      unlink('uploadsEqui/' . $img);
+      echo '<script>window.location.href="'.INCLUDE_PATH_PAINEL.'listar-equipe";</script>';
+
+
+      
       $sql = MySql::conectar()->prepare("DELETE FROM `tb_admin.equipe` WHERE id = ?");
       $sql->execute(array($idDeletar));
       if ($sql->rowCount() == 1) {
