@@ -26,6 +26,44 @@
           </div>
         </div>
       </div>
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Seção 1</h5>
+              <p class="card-text">Conteúdo ou componente 1 aqui.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Seção 2</h5>
+              <p class="card-text">Conteúdo ou componente 2 aqui.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Seção 1</h5>
+              <p class="card-text">Conteúdo ou componente 1 aqui.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Seção 2</h5>
+              <p class="card-text">Conteúdo ou componente 2 aqui.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Mais seções podem ser adicionadas aqui -->
     </div>
