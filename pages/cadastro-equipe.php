@@ -6,7 +6,7 @@
 <div class="container mt-5">
   <div class="card shadow">
     <div class="card-header bg-primary text-white">
-      <h4 class="mb-0">Cadastro de Equipe</h4>
+      <h4 class="mb-0">Cadastro de Funcionário</h4>
     </div>
     <div class="card-body">
       <form method="post" enctype="multipart/form-data">
@@ -50,7 +50,7 @@
 
         <div class="mb-3">
           <label for="image" class="form-label">Imagem do Funcionário</label>
-          <input name="img" type="file" class="form-control" id="imagem-func" required>
+          <input name="img" type="file" class="form-control" id="imagem-func" accept=".jpg, .jpeg, .png" required>
         </div>
 
 

@@ -39,29 +39,40 @@
     }
 
     if (isset($_POST['acaoDeletar']) && isset($_POST['idDeletar'])) {
-      echo '<script>if(!confirm("Tem certeza que deseja deletar este funcionário?")){window.location.href="'.INCLUDE_PATH_PAINEL.'listar-equipe";}</script>';
+      echo '<div class="alert alert-warning" role="alert">
+        <p>Tem certeza que deseja deletar este funcionário?</p>
+        <form method="post" class="d-flex justify-content-between">
+          <input type="hidden" name="idDeletar" value="'.$_POST['idDeletar'].'">
+          <button type="submit" name="confirmarDeletar" class="btn btn-danger">Sim</button>
+          <button type="submit" name="cancelarDeletar" class="btn btn-secondary">Não</button>
+        </form>
+        </div>';
+    }
 
+    if (isset($_POST['cancelarDeletar'])) {
+      echo '<script>window.location.href="'.INCLUDE_PATH_PAINEL.'listar-equipe";</script>';
+      exit;
+    }
 
+    if (isset($_POST['confirmarDeletar'])) {
       $idDeletar = $_POST['idDeletar'];
 
       $sqlImg = MySql::conectar()->prepare("SELECT img FROM `tb_admin.equipe` WHERE id = ?");
       $sqlImg->execute(array($idDeletar));
       $img = $sqlImg->fetch()['img'];
       unlink('uploadsEqui/' . $img);
-      echo '<script>window.location.href="'.INCLUDE_PATH_PAINEL.'listar-equipe";</script>';
 
-
-      
       $sql = MySql::conectar()->prepare("DELETE FROM `tb_admin.equipe` WHERE id = ?");
       $sql->execute(array($idDeletar));
       if ($sql->rowCount() == 1) {
-        Painel::alertSucesso('Funcionário deletado com sucesso!');
+      Painel::alertSucesso('Funcionário deletado com sucesso!');
       } else {
-        Painel::alertErro('Erro ao deletar funcionário!');
+      Painel::alertErro('Erro ao deletar funcionário!');
       }
+      echo '<script>window.location.href="'.INCLUDE_PATH_PAINEL.'listar-equipe";</script>';
+      exit;
     }
-    ?>
-
+?>
     </div>
   </div>
 </div>
