@@ -29,7 +29,6 @@ button:active {
     display: inline-block;
     padding: 5px 10px;
     border-radius: 8px;
-    margin-bottom: 20px;
 }
 
 .navbar-brand:hover {
@@ -38,7 +37,7 @@ button:active {
 }
 
 .navbar-nav{
-    background: #003c78;
+    background: #0056b3;
     margin-right: 40px;
 }
 
@@ -49,8 +48,15 @@ button:active {
     margin: 0px;
 }
 
+.navbar-nav button:hover{
+    background-color: #003c78 !important;
+    color: #fff !important;
+}
+
 .itens-menu button{
     margin-right: 15px;
+    background: #0056b3;
+    padding: 10px 20px;
 }
 
 .nav-pills button{
@@ -60,6 +66,87 @@ button:active {
 .mt-5{
     margin: 1rem auto !important;
 }
+
+/* Estilos gerais do body e html para garantir um layout responsivo */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  footer {
+    background-color: #343a40; /* Cor do fundo do rodapé */
+    color: #f8f9fa;
+    padding: 30px 20px;
+    font-size: 14px;
+  }
+  
+  footer h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  footer p {
+    margin-bottom: 10px;
+  }
+  
+  footer a {
+    color: #f8f9fa;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    color: #007bff;
+    text-decoration: underline;
+  }
+  
+  /* Configuração do aside */
+  .footer-aside {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px; /* Largura do aside */
+    height: 100vh;
+    background-color: #343a40; /* Cor de fundo */
+    padding: 20px;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+  
+  .footer-aside .footer-content {
+    padding-top: 40px;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .footer-aside {
+      width: 100%; /* Para telas menores, ocupa toda a largura */
+      position: relative;
+      height: auto;
+      padding: 20px;
+    }
+  
+    footer h5 {
+      font-size: 1.1rem;
+    }
+  
+    footer p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    footer h5 {
+      font-size: 1rem;
+    }
+  
+    footer p {
+      font-size: 0.85rem;
+    }
+  }
+  
 
 @keyframes buttonFadeIn {
     from {
