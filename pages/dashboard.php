@@ -31,9 +31,10 @@
       <div class="row mt-4">
         <div class="col-md-6">
           <div class="card card-custom">
+            este
             <div class="card-body card-body-custom">
               <h5 class="card-title"><i class="fas fa-tasks me-2"></i> Seção 1</h5>
-              <p class="card-text">Conteúdo ou componente 1 aqui.</p>
+              <p class="card-text">Conteúdo ou componente 2 aqui.</p>
             </div>
           </div>
         </div>
