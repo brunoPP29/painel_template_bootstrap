@@ -1,3 +1,15 @@
+<?php
+  @include('config.php');
+
+  if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
+// tudo certo entra pro painel
+  }else {
+    header('Location: ' . INCLUDE_PATH);
+    exit;
+  }
+
+?>
+
 <!doctype html>
 <html lang="pt-br">
   <head>
