@@ -6,6 +6,7 @@
   }else {
     header('Location: ' . INCLUDE_PATH);
     exit;
+    die('Você não tem permissão para acessar esta página.');
   }
 
 ?>
