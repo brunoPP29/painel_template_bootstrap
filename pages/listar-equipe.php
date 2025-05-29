@@ -7,21 +7,34 @@
 
       <!-- Formulário de Pesquisa -->
        <h4 class="text-center">Busque um Funcionário</h4>
-      <form class="d-flex justify-content-center mb-4" method="GET" action="resultado.php">
+      <form class="d-flex justify-content-center mb-4" method="post">
         <div class="input-group w-75 w-md-50">
           <span class="input-group-text bg-white"><i class="bi bi-search"></i>
 </span>
           <input type="text" class="form-control" name="q" placeholder="Digite sua pesquisa..." required>
-          <button class="btn btn-light" type="submit">
+          <button name="acao" class="btn btn-light" type="submit">
   <i class="bi bi-arrow-right-circle text-dark fs-5"></i>
 </button>
 
-
+    <?php
+    $query = "";
+      if (isset($_POST['acao'])) {
+        echo '<div style="margin-top: 15px;" class="w-100 text-center mb-3">';
+        echo '<div class="alert alert-info shadow-sm rounded d-inline-block px-4 py-2">';
+        echo '<i class="bi bi-info-circle me-2"></i>Mostrando resultados para: <strong>' . htmlspecialchars($_POST['q']) . '</strong>';
+        echo '</div>';
+        echo '</div>';
+        $busca = $_POST['q'];
+        $query = "WHERE nome LIKE '%$busca%' OR cargo LIKE '%$busca%' OR email LIKE '%$busca%'";
+      }
+    
+    
+    ?>
         </div>
       </form>
 
       <?php
-      $sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.equipe`");
+      $sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.equipe` $query");
       $sql->execute();
       $funcionarios = $sql->fetchAll();
       foreach ($funcionarios as $key => $value) {

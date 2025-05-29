@@ -5,9 +5,35 @@
       <h4 class="mb-0"><i class="bi bi-person-lock me-2"></i>Lista de Logins</h4>
     </div>
     <div class="card-body">
+<h4 class="text-center">Busque um Login</h4>
+      <form class="d-flex justify-content-center mb-4" method="post">
+        <div class="input-group w-75 w-md-50">
+          <span class="input-group-text bg-white"><i class="bi bi-search"></i>
+</span>
+          <input type="text" class="form-control" name="q" placeholder="Digite sua pesquisa..." required>
+          <button name="acao" class="btn btn-light" type="submit">
+  <i class="bi bi-arrow-right-circle text-dark fs-5"></i>
+</button>
 
     <?php
-    $sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.usuarios`");
+    $query = "";
+      if (isset($_POST['acao'])) {
+        echo '<div style="margin-top: 15px;" class="w-100 text-center mb-3">';
+        echo '<div class="alert alert-info shadow-sm rounded d-inline-block px-4 py-2">';
+        echo '<i class="bi bi-info-circle me-2"></i>Mostrando resultados para: <strong>' . htmlspecialchars($_POST['q']) . '</strong>';
+        echo '</div>';
+        echo '</div>';
+        $busca = $_POST['q'];
+        $query = "WHERE login LIKE '%$busca%'";
+      }
+    
+    
+    ?>
+        </div>
+      </form>
+
+    <?php
+    $sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.usuarios` $query");
     $sql->execute();
     $loginsList = $sql->fetchAll();
     foreach ($loginsList as $key => $value) {
